@@ -1,2 +1,5 @@
-#!/bin/bash
-find . -type f -name '*.gif' -print0 | while IFS= read -r -d '' file; do printf "%s\n" "${file##*/}" | cut -d. -f1; done | sort -f
+find . -type f -name '*.gif' -print | while read -r file; do
+    filename="${file##*/}"         # Strip directory path
+    name="${filename%.gif}"        # Remove .gif extension
+    echo "$name"
+done | LC_ALL=C sort -f
