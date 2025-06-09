@@ -1,4 +1,2 @@
 #!/bin/bash
-
-# Create a local variable BEST with the value "School"
 BEST="School"
