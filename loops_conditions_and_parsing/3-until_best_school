@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
-
-#counter=1
+#!/bin/bash
+counter=1
 until [ $counter -gt 10 ]
 do
   echo "Best School"
