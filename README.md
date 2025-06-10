@@ -1,1 +1,1 @@
-echo "Describing what each script is doing"
+echo "loops conditions and parsing scripts"                             
