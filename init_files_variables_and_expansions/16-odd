@@ -1,2 +1,2 @@
-16.#!/bin/bash
+#!/bin/bash
 nl | grep '[13579][[:space:]]' | cut -f2-
