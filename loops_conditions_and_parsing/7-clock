@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Display numbers 1 to 20 with bad luck messages using while + case
+i=1
+while [ $i -le 20 ]
+do
+  case $i in
