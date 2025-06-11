@@ -1,2 +1,2 @@
-#!/bin/bash
-paste -d'\n' - - < /dev/stdin
+16.#!/bin/bash
+nl | grep '[13579][[:space:]]' | cut -f2-
