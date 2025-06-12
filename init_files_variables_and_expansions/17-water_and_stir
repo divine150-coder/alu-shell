@@ -1,2 +1,12 @@
 #!/bin/bash
-printf "%o\n" $(($((5#$(echo $WATER | tr water 01234))) + $((5#$(echo $STIR | tr stir. 01234)))))
+s=$(echo "$STIR" | tr 'stir.' '01234')
+s=$(echo "$STIR" | tr 'stir.' '01234')
+sum=$((5#$w + 5#$s))
+digits=(b e s t c h o l)
+result=""
+while [ "$sum" -gt 0 ]
+do
+remainder=$((sum % 8))
+result="${digits[$remainder]}$result"
+sum=$((sum / 8))
+echo "$result"
