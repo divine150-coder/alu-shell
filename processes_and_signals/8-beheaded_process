@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Stops any running instance(s) of the 7-highlander process
+# stops all instances of the 7-highlander process cleanly and quietly
 
+# Send SIGTERM to 7-highlander processes matching the command line
 pkill -f 7-highlander
 
