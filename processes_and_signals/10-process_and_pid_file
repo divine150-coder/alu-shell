@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Creates pidfile, runs indefinitely, handles signals, cleans up on exit
+
+PIDFILE="/var/run/myscript.pid"
+
+# Write our own PID to the pidfile
+echo "$$" > "$PIDFILE"
+
+# Handle SIGTERM: print, delete pidfile, then exit
+trap 'echo "I hate the kill command"; rm -f "$PIDFILE"; exit' SIGTERM
+
+# Handle SIGQUIT: delete pidfile and exit quietly
+trap 'rm -f "$PIDFILE"; exit' SIGQUIT
+
+# Handle SIGINT: print a message, but continue running
+trap 'echo "Y U no love me?!";' SIGINT
+
+# Indefinite loop printing with a 2-second delay
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+done
+
