@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# manage_my_process init script: start, stop, restart daemon writing to /tmp/my_process
+
+DAEMON="$(cd "$(dirname "$0")" && pwd)/manage_my_process"
+PIDFILE="/var/run/my_process.pid"
+
+do_start() {
+  "$DAEMON" &
+  echo $! > "$PIDFILE"
+  echo "manage_my_process started"
+}
+
+do_stop() {
+  if [ -f "$PIDFILE" ]; then
+    kill "$(cat "$PIDFILE")" && rm -f "$PIDFILE"
+    echo "manage_my_process stopped"
+  else
+    echo "manage_my_process not running"
+  fi
+}
+
+case "$1" in
+  start)   do_start ;;
+  stop)    do_stop ;;
+  restart) do_stop; do_start; echo "manage_my_process restarted" ;;
+  *)       echo 'Usage: manage_my_process {start|stop|restart}' ;;
+esac
+
