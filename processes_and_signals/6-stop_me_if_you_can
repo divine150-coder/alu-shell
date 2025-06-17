@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# This script stops the 4-to_infinity_and_beyond process without using kill or killall
 
 # Start the target process in the background
 ./4-to_infinity_and_beyond &
