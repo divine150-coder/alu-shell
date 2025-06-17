@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# File: 5-dont_stop_me_now
+# Description: Find and kill any running instance of 4-to_infinity_and_beyond
+
+# Fetch PIDs of running "4-to_infinity_and_beyond" processes
+pids=$(pgrep -f "4-to_infinity_and_beyond")
+
+# Kill each one found
+if [[ -n $pids ]]; then
+  echo "Stopping process(es): $pids"
+  kill $pids
+else
+  echo "No running 4-to_infinity_and_beyond process found."
+fi
+
