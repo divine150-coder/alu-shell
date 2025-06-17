@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# File: 1-list_your_processes
-# Description: List all processes for all users, in a user-friendly, hierarchical format
 
-ps axjf
+# Display all processes for all users in a user-oriented format with hierarchy
+ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest
