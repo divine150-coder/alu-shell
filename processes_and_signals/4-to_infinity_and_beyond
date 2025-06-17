@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# File: 4-to_infinity_and_beyond
+# Description: Prints "To infinity and beyond" every 2 seconds indefinitely
+
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+done
+
