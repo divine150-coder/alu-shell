@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# File: 3-show_your_bash_pid_made_easy
+# Description: List the PID and process name of all bash processes, excluding the header
 
-# shellcheck disable=SC2009
-ps -e -o user,pid,%cpu,%mem,vsz,rss,tty,stat,start,time,cmd --forest | grep bash
+pgrep -l bash
+
