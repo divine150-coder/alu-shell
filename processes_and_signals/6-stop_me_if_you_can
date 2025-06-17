@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Send SIGTERM to the specific script
+pkill -SIGTERM -f "4-to_infinity_and_beyond"
