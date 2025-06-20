@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# File: 1-list_your_processes
-# Description: List all processes for all users (even without TTY),
-# display user-oriented format, and show hierarchy, including PPID, TIME, and COMMAND.
+# Show all running processes with full info and history
 
-ps ax --forest -o ppid=,time=,cmd=
+ps aux --forest
